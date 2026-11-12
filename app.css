@@ -64,3 +64,4 @@ body { background: var(--paper); }
 @media (prefers-reduced-motion: reduce) { .tour-spot { transition: none; } }
 @media (max-width: 640px) { .tour-pop:not(.center) { left: 12px !important; top: auto !important; bottom: 12px; } }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+.tbl td.num { white-space: nowrap; }

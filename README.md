@@ -18,6 +18,7 @@ python build_data.py  # prépare data.js pour le tableau de bord
 | Aanbesteders | 1 + 5. Stem | Score « PME-friendly » par pouvoir adjudicateur (concurrence, PME gagnantes, lots, qualité) |
 | Leden | 2. Koppeling | Membres qui gagnent, chez qui, et qui d'autre gagne sur le même marché |
 | Signalen | 2 + 3 | Appels ouverts rapprochés du profil CPV de chaque membre ; suggestion de consortium |
+| e-Procurement | 2 | Étude de cas : 11 marchés IT avec leur PV d'ouverture (tous les soumissionnaires) et, quand elle est publiée, l'attribution |
 
 ## Hypothèses et limites
 
@@ -26,3 +27,5 @@ python build_data.py  # prépare data.js pour le tableau de bord
 - TED couvre seulement les marchés au-dessus des seuils européens et ne montre pas les soumissionnaires perdants.
 - Le nombre d'offres au-delà de 100 est écarté (erreurs de saisie dans TED).
 - Étape suivante prévue : score de pertinence par Claude, membre par membre (logique de RFP_Automation).
+- L'onglet e-Procurement repose sur un petit extrait (`pv.js`) relevé à la main en novembre 2026 sur le site public de BOSA,
+  sans données personnelles. Il n'y a pas d'accès officiel ni d'export : ce n'est pas une source de production.
