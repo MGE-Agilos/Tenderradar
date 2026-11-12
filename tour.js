@@ -22,8 +22,8 @@
       body: "<strong>Klik op een lid</strong> in de tabel: rechts verschijnen zijn gunningen en wie er nog wint bij dezelfde aanbesteders. Leden worden gekoppeld via hun KBO-nummer.<br><br>Dit kan geen commerciële speler: die kent uw leden niet." },
     { tab: "signalen", sel: "#signDetail", before: () => clickFirst("#tblSign tbody tr[data-k]"), title: "Gerichte signalen",
       body: "Elke lopende oproep wordt vergeleken met het profiel van elk lid, zonder dat leden zelf filters instellen. <strong>Klik op een oproep</strong> om de betrokken leden te zien.<br><br>Wanneer meerdere kmo-leden passen, stelt de tool een consortium voor." },
-    { tab: "eprocurement", sel: "#pvDetail", title: "Ook de verliezers",
-      body: "TED toont alleen wie won. Het openingsverslag van e-Procurement toont <strong>alle inschrijvers</strong>, ook onder de Europese drempels. <strong>Klik op een opdracht</strong> om te zien wie meedong, wie won en wie niet gekozen werd.<br><br>Dit is een kleine casestudy: lees de beperkingen bovenaan de pagina." },
+    { tab: "opdrachten", sel: "#tblOpd", title: "Alle opdrachten in één lijst",
+      body: "TED en e-Procurement samen. Het label toont de bron. <strong>Filter op <em>Alle inschrijvers</em></strong> om de opdrachten te zien waarvan het openingsverslag bekend is: daar ziet u niet alleen wie won, maar ook wie verloor.<br><br>Zoek op een onderneming om al haar opdrachten te vinden." },
     { tab: "over", sel: "#overBody", title: "Bronnen en grenzen",
       body: "Hier leest u welke data gebruikt is, wat TED niet toont (de verliezende inschrijvers, opdrachten onder de drempel) en wat de volgende stappen zijn.<br><br>U kunt deze rondleiding altijd opnieuw starten met de knop <em>Rondleiding</em> bovenaan." },
   ];

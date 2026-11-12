@@ -17,7 +17,7 @@
     <a href="#aanbesteders" data-tab="aanbesteders">Aanbesteders</a>
     <a href="#leden" data-tab="leden">Leden</a>
     <a href="#signalen" data-tab="signalen">Signalen</a>
-    <a href="#eprocurement" data-tab="eprocurement">e-Procurement</a>
+    <a href="#opdrachten" data-tab="opdrachten">Opdrachten</a>
     <a href="#over" data-tab="over">Over de demo</a>
   </nav>
   <button type="button" class="btn small tour-btn" id="tourBtn">Rondleiding</button>
@@ -79,16 +79,19 @@
     </div>
   </section>
 
-  <!-- e-Procurement casestudy -->
-  <section id="tab-eprocurement" class="tab" hidden>
-    <div class="page-header"><div><p class="eyebrow">Casestudy · bron e-Procurement (FOD BOSA)</p><h1 class="page-title">Wie dong mee, wie won, wie verloor</h1></div></div>
-    <p class="lead">TED toont alleen de winnaar. Het openingsverslag op e-Procurement somt <strong>alle</strong> inschrijvers op, ook onder de Europese drempels. Samen met de gunning ziet de federatie ook wie verloor.</p>
-    <div class="banner info" role="note"><div><strong>Beperkingen van deze casestudy.</strong> Kleine steekproef van 11 IT-opdrachten (CPV 72), handmatig geselecteerd in november 2026 via de publieke website, geen volledige dataset. Slechts ongeveer 1 op 6 à 7 bekeken opdrachten had een publiek openingsverslag, en bij de meeste is de gunning (nog) niet gepubliceerd. Gegevens zoals gepubliceerd door de FOD BOSA, ter illustratie overgenomen met link naar de bron; geen persoonsgegevens (natuurlijke personen weggelaten). Een structurele dienst vraagt een officiële toegang (BOSA) of een leverancier.</div></div>
-    <div class="cards" id="pvKpis"></div>
-    <p class="small muted" id="pvLeden"></p>
+  <!-- Opdrachten: TED + e-Procurement samen -->
+  <section id="tab-opdrachten" class="tab" hidden>
+    <div class="page-header"><div><p class="eyebrow">TED en e-Procurement samen</p><h1 class="page-title">Alle opdrachten, wie won en wie verloor</h1></div></div>
+    <p class="lead">Eén lijst voor beide bronnen. TED geeft de winnaar van de Europese opdrachten; e-Procurement (FOD BOSA) voegt de opdrachten onder de drempels toe en, via het openingsverslag, <strong>alle inschrijvers</strong>.</p>
+    <div class="banner info" role="note"><div><strong>Beperking.</strong> TED is volledig opgenomen (Belgische gunningen sinds 2024). Voor e-Procurement bestaat geen officiële koppeling: de demo bevat een kleine steekproef van 11 IT-opdrachten met openingsverslag, opgezocht op de publieke website in november 2026, met link naar de bron en zonder persoonsgegevens. Een volledige integratie vraagt een officiële toegang (BOSA) of een leverancier.</div></div>
+    <div class="cards" id="opdKpis"></div>
+    <div class="toolbar">
+      <div class="seg" id="bronFilter" role="group" aria-label="Bron"></div>
+      <div class="field" style="margin:0"><label for="qOpd" class="sr-only">Zoek opdracht of onderneming</label><input id="qOpd" type="search" placeholder="Zoek opdracht, aanbesteder of onderneming…"></div>
+    </div>
     <div class="grid2 wide-left">
-      <div class="tbl-wrap"><table class="tbl" id="tblPv"></table></div>
-      <div class="side-panel" id="pvDetail"></div>
+      <div class="tbl-wrap"><table class="tbl" id="tblOpd"></table></div>
+      <div class="side-panel" id="opdDetail"></div>
     </div>
   </section>
 
@@ -103,7 +106,7 @@
 <script src="data.js"></script>
 <script src="pv.js"></script>
 <script src="app.js"></script>
-<script src="pv-tab.js"></script>
+<script src="opdrachten-tab.js"></script>
 <script src="tour.js"></script>
 </body>
 </html>

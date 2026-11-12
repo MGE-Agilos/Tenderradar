@@ -110,7 +110,7 @@
     const t = (location.hash || "#barometer").slice(1);
     document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + t; });
     document.querySelectorAll(".topnav a").forEach(a => a.classList.toggle("active", a.dataset.tab === t));
-    $("#filters").hidden = t === "over" || t === "eprocurement";
+    $("#filters").hidden = t === "over";
   }
   window.addEventListener("hashchange", showTab);
 
@@ -255,9 +255,9 @@
       <li>TED toont wie wint, niet wie meedong en verloor. Het proces-verbaal van opening (e-Procurement) heeft die informatie, maar geen officiële koppeling.</li>
       <li>Waarden van raamovereenkomsten zijn maxima en vertekenen totalen; daarom toont de demo medianen.</li>
     </ul>
-    <div class="section-title">Casestudy e-Procurement</div>
+    <div class="section-title">TED en e-Procurement</div>
     <ul>
-      <li>Het onderdeel e-Procurement toont 11 IT-opdrachten met hun openingsverslag (alle inschrijvers), opgezocht op de publieke website van de FOD BOSA. Het is een illustratie, geen dataset: er is geen officiële koppeling of bulkexport.</li>
+      <li>Het onderdeel Opdrachten brengt TED en e-Procurement samen in één lijst. Voor e-Procurement gaat het om 11 IT-opdrachten met hun openingsverslag (alle inschrijvers), opgezocht op de publieke website van de FOD BOSA: een illustratie, geen dataset, want er is geen officiële koppeling of bulkexport.</li>
     </ul>
     <div class="section-title">Volgende stappen</div>
     <ul>
