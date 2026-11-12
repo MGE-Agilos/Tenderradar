@@ -1,0 +1,6 @@
+raw/
+tenderradar.html
+__pycache__/
+.env
+*.key
+*.pem

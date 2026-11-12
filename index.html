@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenderradar demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300..800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="bdg.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#barometer"><b>Tender<i>radar</i></b><span>Demo federatielaag · overheidsopdrachten</span></a>
+  <nav class="topnav" aria-label="Secties">
+    <a href="#barometer" data-tab="barometer">Sectorbarometer</a>
+    <a href="#aanbesteders" data-tab="aanbesteders">Aanbesteders</a>
+    <a href="#leden" data-tab="leden">Leden</a>
+    <a href="#signalen" data-tab="signalen">Signalen</a>
+    <a href="#over" data-tab="over">Over de demo</a>
+  </nav>
+  <button type="button" class="btn small tour-btn" id="tourBtn">Rondleiding</button>
+</header>
+
+<main class="wrap">
+  <div class="banner warn" role="note">
+    <div><strong>Demo.</strong> Echte publieke data uit TED (Belgische gunningen sinds 2024, sectoren via CPV). Het <strong>ledenbestand is gesimuleerd</strong>: een willekeurige steekproef van Belgische winnaars, geen echte leden van een federatie.</div>
+  </div>
+
+  <div class="toolbar" id="filters">
+    <span class="small muted">Subsector</span>
+    <div class="seg" id="sectFilter" role="group" aria-label="Subsector"></div>
+  </div>
+
+  <!-- Sectorbarometer -->
+  <section id="tab-barometer" class="tab">
+    <div class="hero">
+      <p class="eyebrow">Bouwsteen 1 · collectieve sectorinzichten</p>
+      <h1 class="page-title">Sectorbarometer overheidsopdrachten</h1>
+      <p class="lead" id="heroLead"></p>
+    </div>
+    <div class="cards" id="kpis"></div>
+    <div class="grid2">
+      <div class="panel"><h2>Gunningen per kwartaal</h2><p class="small muted">Aantal gegunde opdrachten gepubliceerd op TED</p><div class="chart" id="chQuarter"></div></div>
+      <div class="panel"><h2>Gunningen per subsector</h2><p class="small muted">Op basis van de hoofd-CPV-code van de opdracht</p><div class="chart" id="chSector"></div></div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><h2>Aandeel kmo-winnaars per subsector</h2><p class="small muted">Winnaars met bekende grootte (micro, klein, middelgroot, kmo)</p><div class="chart" id="chKmo"></div></div>
+      <div class="panel"><h2>Concurrentie per subsector</h2><p class="small muted">Gemiddeld aantal offertes per opdracht</p><div class="chart" id="chOff"></div></div>
+    </div>
+  </section>
+
+  <!-- Aanbesteders -->
+  <section id="tab-aanbesteders" class="tab" hidden>
+    <div class="page-header"><div><p class="eyebrow">Bouwstenen 1 en 5 · stem tegenover aanbesteders</p><h1 class="page-title">Kmo-vriendelijkheid per aanbesteder</h1></div></div>
+    <p class="lead">Score 0–100 = gemiddelde van vier signalen: concurrentie (gemiddeld aantal offertes, 5 of meer = vol), aandeel kmo-winnaars, opdeling in percelen en kwaliteit naast prijs. Alleen aanbesteders met minstens 5 gunningen.</p>
+    <div class="toolbar"><div class="field" style="margin:0;min-width:260px"><label for="qAanb" class="sr-only">Zoek aanbesteder</label><input id="qAanb" type="search" placeholder="Zoek aanbesteder…"></div><span class="small muted" id="aanbCount"></span></div>
+    <div class="tbl-wrap"><table class="tbl" id="tblAanb"></table></div>
+  </section>
+
+  <!-- Leden -->
+  <section id="tab-leden" class="tab" hidden>
+    <div class="page-header"><div><p class="eyebrow">Bouwsteen 2 · koppeling met het ledenbestand</p><h1 class="page-title">Leden op de overheidsmarkt</h1></div></div>
+    <div class="cards" id="ledenKpis"></div>
+    <div class="grid2 wide-left">
+      <div class="tbl-wrap"><table class="tbl" id="tblLeden"></table></div>
+      <div class="side-panel" id="lidDetail"><p class="muted">Kies een lid om zijn gunningen en concurrenten te zien.</p></div>
+    </div>
+  </section>
+
+  <!-- Signalen -->
+  <section id="tab-signalen" class="tab" hidden>
+    <div class="page-header"><div><p class="eyebrow">Bouwsteen 2 · gerichte signalen</p><h1 class="page-title">Lopende oproepen en welke leden ze aangaan</h1></div></div>
+    <p class="lead">Elke lopende oproep wordt vergeleken met het profiel van elk lid (CPV-klassen waarin het al won), zonder dat leden zelf filters instellen. In een volgende stap scoort Claude de relevantie per lid op basis van het bestek, zoals in onze interne tool RFP Automation.</p>
+    <div class="grid2 wide-left">
+      <div class="tbl-wrap"><table class="tbl" id="tblSign"></table></div>
+      <div class="side-panel" id="signDetail"><p class="muted">Kies een oproep om de betrokken leden te zien.</p></div>
+    </div>
+  </section>
+
+  <!-- Over -->
+  <section id="tab-over" class="tab" hidden>
+    <div class="page-header"><div><p class="eyebrow">Bronnen en aannames</p><h1 class="page-title">Over deze demo</h1></div></div>
+    <div class="panel" id="overBody"></div>
+  </section>
+</main>
+
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="tour.js"></script>
+</body>
+</html>

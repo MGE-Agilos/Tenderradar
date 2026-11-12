@@ -1,0 +1,66 @@
+body { background: var(--paper); }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.grid2.wide-left { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+.grid2 > .panel { margin-bottom: 0; }
+.tab .cards { margin-bottom: 20px; }
+.tab > .grid2 { margin-bottom: 20px; }
+.hero .lead { margin-bottom: 0; margin-right: 230px; }
+.chart { width: 100%; margin-top: 8px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font: 500 12px var(--f-body); fill: var(--muted); }
+.chart text.val { fill: var(--ink-2); font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart text.lbl { fill: var(--ink-2); }
+.chart .grid line { stroke: var(--line); }
+.chart .bar { fill: var(--c1); }
+.chart .bar.dim { fill: var(--mark); }
+.chart .hit { fill: transparent; cursor: default; }
+.chart .hit:hover + .bar, .chart g:hover .bar { opacity: .82; }
+.tip { position: fixed; z-index: 40; pointer-events: none; background: var(--navy); color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 13px; box-shadow: var(--shadow); max-width: 320px; }
+.tip b { font-variant-numeric: tabular-nums; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tbl th { text-align: left; font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl th[data-sort] { cursor: pointer; }
+.tbl th[aria-sort] { color: var(--emph-ink); }
+.tbl td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tbl td.num, .tbl th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl tr.sel td { background: var(--emph-wash); }
+.tbl tbody tr[data-k] { cursor: pointer; }
+.tbl tbody tr[data-k]:hover td { background: var(--surface-2); }
+.score { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+.score .meter { flex: 1; }
+.score b { width: 28px; text-align: right; font-variant-numeric: tabular-nums; }
+.side-panel h3 { margin: 0 0 4px; font-size: 18px; }
+.side-panel ul { padding-left: 18px; margin: 6px 0; }
+.side-panel li { margin: 4px 0; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.more { font-size: 13px; color: var(--muted); padding: 10px 14px; }
+@media (max-width: 900px) {
+  .grid2, .grid2.wide-left { grid-template-columns: minmax(0, 1fr); }
+  .hero .lead { margin-right: 0; }
+}
+.seg { flex-wrap: wrap; border-radius: 18px; }
+.toolbar .field { flex: 1 1 220px; }
+@media (max-width: 640px) { .toolbar .field { min-width: 0 !important; } .hero { padding: 24px 20px; } .tbl td, .tbl th { padding: 8px 10px; } }
+.topnav { flex-wrap: wrap; gap: 6px 16px; }
+
+/* Rondleiding */
+.tour-btn { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .35); }
+.tour-btn:hover { border-color: var(--cyan); }
+.tour-shade { position: fixed; inset: 0; z-index: 60; background: transparent; }
+.tour-shade.on { background: rgba(3, 6, 73, .55); }
+.tour-spot { position: fixed; z-index: 61; border-radius: 14px; box-shadow: 0 0 0 9999px rgba(3, 6, 73, .55), 0 0 0 3px var(--cyan); pointer-events: none; transition: all .25s ease; }
+.tour-pop { position: fixed; z-index: 62; width: min(380px, calc(100vw - 24px)); background: var(--surface); color: var(--ink); border-radius: var(--r-card); box-shadow: 0 24px 60px rgba(0, 0, 0, .35); padding: 22px 22px 18px; }
+.tour-pop:focus { outline: none; }
+.tour-pop h2 { font-size: 19px; margin: 0 0 8px; padding-right: 24px; }
+.tour-body { font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+.tour-x { position: absolute; top: 12px; right: 14px; border: 0; background: none; font-size: 22px; line-height: 1; color: var(--muted); cursor: pointer; padding: 4px; }
+.tour-x:hover { color: var(--ink); }
+.tour-dots { display: flex; gap: 6px; margin: 16px 0 12px; }
+.tour-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong); }
+.tour-dots i.on { background: var(--violet); width: 18px; border-radius: 99px; }
+.tour-actions { display: flex; justify-content: space-between; gap: 10px; }
+@media (prefers-reduced-motion: reduce) { .tour-spot { transition: none; } }
+@media (max-width: 640px) { .tour-pop:not(.center) { left: 12px !important; top: auto !important; bottom: 12px; } }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
